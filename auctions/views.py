@@ -61,3 +61,29 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/register.html")
+
+# Create my views here.
+
+def bid_page(request, auction_id):
+    return index(request)
+
+def comment(request, auction_id):
+    return index(request)
+
+def raise_bid(request, auction_id):
+    return bid_page(request, auction_id)
+
+def watchlist(request, auction_id):
+    return index(request)
+
+def watchlist_page(request):
+    return index(request)
+
+def balance(request):
+    return index(request)
+
+def topup(request):
+    return index(request)
+
+def filter_auctions(request, category):
+    return index(request)
