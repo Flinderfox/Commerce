@@ -3,10 +3,10 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("login", views.login_view, name="login"),
-    path("logout", views.logout_view, name="logout"),
-    path("register", views.register, name="register"),
-    path('category/<str:category>/', views.filter_auctions, name='filter_auctions'),
+    path("login/", views.login_view, name="login"),
+    path("logout/", views.logout_view, name="logout"),
+    path("register/", views.register, name="register"),
+    path('categories/<str:category>/', views.filter_auctions, name='filter_auctions'),
     path('watchlist/<int:auction_id>/', views.watchlist, name='watchlist'),
     path('balance/', views.balance, name='balance'),
     path('balance/topup/', views.topup, name='topup'),

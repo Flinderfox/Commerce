@@ -9,23 +9,15 @@ class User(AbstractUser):
 
 # Create my models here.
 
+class  Category(models.Model):
+    title = models.CharField(max_length=60)
+
 class Product(models.Model):
-    CATEGORIES = (
-        ('FAS', 'Fashion'),
-        ('TOY', 'Toys'),
-        ('ELE', 'Electronics'),
-        ('HOM', 'Home'),
-        ('BEA', 'Beauty'),
-        ('AUT', 'Automobiles')
-    )
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     image = models.ImageField()
     description = models.CharField(max_length = 500)
     quantity = models.IntegerField()
-    category = models.CharField(
-        max_length=3,
-        choices=CATEGORIES
-    )
     date_posted = models.DateTimeField(auto_now_add=True, blank=True)
 
 class Auction(models.Model):
