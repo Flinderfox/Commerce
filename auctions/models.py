@@ -10,11 +10,11 @@ class User(AbstractUser):
 # Create my models here.
 
 class  Category(models.Model):
-    title = models.CharField(max_length=60)
+    name = models.CharField(max_length = 30)
 
 class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length = 255)
     image = models.ImageField()
     description = models.CharField(max_length = 500)
     quantity = models.IntegerField()
